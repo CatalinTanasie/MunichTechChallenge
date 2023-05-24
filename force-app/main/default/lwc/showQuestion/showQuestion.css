@@ -1,0 +1,22 @@
+.custom-style {
+    border-color: rgba(65, 148, 249, 1);
+    color: rgba(65, 148, 249, 1);
+}
+
+.custom-font {
+    font-size: medium;
+}
+
+.custom-style-chat {
+    border-color: rgba(99, 172, 155, 255);
+    color: rgba(65, 148, 249, 1);
+}
+
+.custom-font-chat {
+    font-size: medium;
+    color: rgba(99, 172, 155, 255);
+}
+
+.chatIcon {
+    width:auto;
+}

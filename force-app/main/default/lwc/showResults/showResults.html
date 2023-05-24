@@ -1,0 +1,22 @@
+<template>
+    <div>
+        <template lwc:if={showError}>
+            <div class="slds-text-heading_medium">Error: {errorMessage}</div>
+        </template>
+        <template lwc:else>
+        <div class="slds-align_absolute-center">
+            <img src={resultImage} alt="Results" width="700" height="500">
+        </div>
+        <div class="slds-m-around_large">
+            <lightning-layout vertical-align="center" multiple-rows>
+                    <lightning-layout-item key={chat} size="12" padding="around-small">
+                        <div class="slds-text-heading_medium">Your score: {[[score stuff]]}</div>
+                    </lightning-layout-item>
+                    <lightning-layout-item key={chat} size="12" padding="around-small">
+                        <div class="slds-text-heading_medium">{[[some "constructive" feedback]]}</div>
+                    </lightning-layout-item>
+            </lightning-layout>
+        </div>
+        </template>
+    </div>
+</template>

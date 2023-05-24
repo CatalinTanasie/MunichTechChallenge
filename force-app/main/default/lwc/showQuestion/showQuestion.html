@@ -1,0 +1,41 @@
+<template>
+    <div>
+        <div class="slds-align_absolute-center">
+            <!--picture goes here in an iFrame-->
+        </div>
+
+        <div class="slds-m-around_large">
+            <div class="slds-m-around_small custom-font"><!--trivia question hints--></div>
+            <template...
+            <lightning-layout vertical-align="center" multiple-rows>
+                <!--for stuff that you pass in-->
+                    <lightning-layout-item <!--other input--> size="6" padding="around-small">
+                        <div class="slds-box custom-style custom-font" data-id=[[someVariable]] onclick=[[someFunction]]
+                             onmouseover={setMouseOverColors} onmouseleave={setMouseLeaveColors}>
+                            [[someVariable]]
+                        </div>
+                    </lightning-layout-item>
+                </template>
+                <template...
+                <lightning-layout-item key={[someKey]]} size="6" padding="around-small">
+                    <div class="slds-box custom-style-chat custom-font-chat" data-id={[[something]]} onclick={[[Ask Chat GPT]]}
+                         onmouseover={setMouseOverColorsChat} onmouseleave={setMouseLeaveColorsChat}>
+                        <img src={chatGPTIcon} alt="chatIcon" class="slds-button__icon_large chatIcon">Ask ChatGPT
+                    </div>
+                </lightning-layout-item>
+                <lightning-layout-item key={chatAnswer} size="6" padding="around-small">
+                    <template lwc:if={displayLoadingIcon}>
+                        <lightning-dynamic-icon type="eq" option="play" alternative-text="Chat call in progress"></lightning-dynamic-icon>
+                    </template>
+                    <template lwc:else>
+                        <div class="slds-m-around_small custom-font-chat">{[[some result]]}</div>
+                    </template>
+                </lightning-layout-item>
+                    <lightning-layout-item key={chatCount} size="6" padding="around-small">
+                        <div class="slds-m-around_small custom-font-chat">Chat GPT hints provided: {[[some variable]]}</div>
+                    </lightning-layout-item>
+                </template>
+            </lightning-layout>
+        </div>
+    </div>
+</template>
