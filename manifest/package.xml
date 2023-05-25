@@ -10,6 +10,9 @@
         <members>NTTJWTBearerFlow</members>
         <members>NTTOfficeTriviaClient</members>
         <members>NTTOfficeTriviaQuestion</members>
+        <members>NTTShowQuestionController</members>
+        <members>NTTOfficeTriviaAnswer</members>
+        <members>NTTOfficeTriviaAnswerCollection</members>
         <name>ApexClass</name>
     </types>
     <types>
@@ -19,6 +22,10 @@
     <types>
         <members>ChatGPT</members>
         <name>NamedCredential</name>
+    </types>
+    <types>
+        <members>Chat_GPT_Query_Set</members>
+        <name>PermissionSet</name>
     </types>
     <version>57.0</version>
 </Package>
