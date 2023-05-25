@@ -13,6 +13,23 @@
         <members>NTTShowQuestionController</members>
         <members>NTTOfficeTriviaAnswer</members>
         <members>NTTOfficeTriviaAnswerCollection</members>
+        <members>NTTOfficeTriviaQuestionCollection</members>
+        <members>HTTPFormBuilder</members>
+        <members>NTTClassifyImageAction</members>
+        <members>NTTContentDistributionSelector</members>
+        <members>NTTContentDocumentLinkSelector</members>
+        <members>NTTEinsteinVision</members>
+        <members>NTTEinsteinVisionAccess</members>
+        <members>NTTOfficeSelector</members>
+        <members>NTTOfficeTriviaEvaluateAnswers</members>
+        <members>NTTOfficeTriviaFeedback</members>
+        <members>NTTOfficeTriviaGetQuestions</members>
+        <members>NTTOfficeTriviaService</members>
+        <members>NTTOfficeTriviaServiceOperations</members>
+        <members>NTTTriviaAnswerBuilder</members>
+        <members>NTTTriviaAnswerScoreSelector</members>
+        <members>NTTTriviaAnswerSelector</members>
+        <members>NTTUploadService</members>
         <name>ApexClass</name>
     </types>
     <types>
@@ -26,6 +43,54 @@
     <types>
         <members>Chat_GPT_Query_Set</members>
         <name>PermissionSet</name>
+    </types>
+    <types>
+        <members>nttlogo1</members>
+        <name>ContentAsset</name>
+    </types>
+    <types>
+        <members>Munich_Tech_Challenge</members>
+        <members>Munich_Tech_Review</members>
+        <name>CustomApplication</name>
+    </types>
+    <types>
+        <members>Office__c</members>
+        <members>Technical_Challenge</members>
+        <members>Trivia_Answer_Score__c</members>
+        <members>Trivia_Answer__c</members>
+        <name>CustomTab</name>
+    </types>
+    <types>
+        <members>Munich_Tech_Challenge_UtilityBar</members>
+        <members>Munich_Tech_Review_UtilityBar</members>
+        <members>Office_Record_Page</members>
+        <members>Technical_Challenge</members>
+        <name>FlexiPage</name>
+    </types>
+    <types>
+        <members>NTT_Office_Trivia_Contest_Process</members>
+        <members>Process_Image_for_Classification</members>
+        <name>Flow</name>
+    </types>
+    <types>
+        <members>NTT_Office_Trivia_Contest_Process</members>
+        <name>FlowDefinition</name>
+    </types>
+    <types>
+        <members>Office__c.All</members>
+        <members>Trivia_Answer_Score__c.All</members>
+        <members>Trivia_Answer__c.All</members>
+        <name>ListView</name>
+    </types>
+    <types>
+        <members>Admin</members>
+        <name>Profile</name>
+    </types>
+    <types>
+        <members>ApexDevNet</members>
+        <members>SalesforceDevEdAuth</members>
+        <members>Self</members>
+        <name>RemoteSiteSetting</name>
     </types>
     <version>57.0</version>
 </Package>

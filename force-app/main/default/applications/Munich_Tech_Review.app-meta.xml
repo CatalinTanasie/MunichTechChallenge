@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomApplication xmlns="http://soap.sforce.com/2006/04/metadata">
+    <brand>
+        <headerColor>#0070D2</headerColor>
+        <logo>nttlogo1</logo>
+        <logoVersion>1</logoVersion>
+        <shouldOverrideOrgTheme>false</shouldOverrideOrgTheme>
+    </brand>
+    <formFactors>Small</formFactors>
+    <formFactors>Large</formFactors>
+    <isNavAutoTempTabsDisabled>false</isNavAutoTempTabsDisabled>
+    <isNavPersonalizationDisabled>false</isNavPersonalizationDisabled>
+    <isNavTabPersistenceDisabled>false</isNavTabPersistenceDisabled>
+    <label>Munich Tech Review</label>
+    <navType>Standard</navType>
+    <tabs>Office__c</tabs>
+    <tabs>Trivia_Answer__c</tabs>
+    <tabs>Trivia_Answer_Score__c</tabs>
+    <tabs>Technical_Challenge</tabs>
+    <uiType>Lightning</uiType>
+    <utilityBar>Munich_Tech_Review_UtilityBar</utilityBar>
+</CustomApplication>
