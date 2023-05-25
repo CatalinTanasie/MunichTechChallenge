@@ -2,7 +2,23 @@
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
     <types>
         <members>NTTOfficeTriviaServiceComponents</members>
+        <members>NTTChatGPTClient</members>
+        <members>NTTChatGPTComponents</members>
+        <members>NTTChatGPTConstants</members>
+        <members>NTTChatGPTOperations</members>
+        <members>NTTJWT</members>
+        <members>NTTJWTBearerFlow</members>
+        <members>NTTOfficeTriviaClient</members>
+        <members>NTTOfficeTriviaQuestion</members>
         <name>ApexClass</name>
+    </types>
+    <types>
+        <members>ChatGPTMunichTech</members>
+        <name>ExternalCredential</name>
+    </types>
+    <types>
+        <members>ChatGPT</members>
+        <name>NamedCredential</name>
     </types>
     <version>57.0</version>
 </Package>

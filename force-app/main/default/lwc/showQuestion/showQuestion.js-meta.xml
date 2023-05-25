@@ -7,7 +7,9 @@
     </targets>
     <targetConfigs>
         <targetConfig targets="lightning__FlowScreen">
-            <!--Wouldn't some parameters look nice?-->
+            <property name="chatGPTCount" type="Integer" />
+            <property name="question" label="Question" type="apex://NTTOfficeTriviaQuestion" role="inputOnly"/>
+            <property name="answer" label="Answer" type="String" role="outputOnly"/>
         </targetConfig>
     </targetConfigs>
 </LightningComponentBundle>

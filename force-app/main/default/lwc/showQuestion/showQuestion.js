@@ -1,18 +1,45 @@
-import { LightningElement <!--and some others--> } from 'lwc';
-import askQuestion from <!--use NTTShowQuestionController-->;
+import { LightningElement, api, track } from 'lwc';
+import askQuestion from '@salesforce/apex/NTTShowQuestionController.askChatGPTForTriviaAnswer';
 import CHAT_LOGO from '@salesforce/resourceUrl/ChatGPTIcon';
 
 export default class ShowQuestion extends LightningElement {
+    get question() {
+        return this._question;
+    }
+    @api
+    set question(value) { 
+        let data = {...value};
+        data.publicImageURLList = data.publicImageURLList[0];
+        this._question = data;
+    }
 
-    /**
-    Add relevant variables
-    */
+    get answer() {
+        return this._answer;
+    }
+
+    @api
+    set answer(value) {
+        this._answer = value;
+    }
+
+    @api set chatGPTCount(value) {
+        this._chatGPTCount = value;
+    }
+
+    get chatGPTCount() {
+        return this._chatGPTCount;
+    }
+
+    @track chatGPTAnswer;
+    @track _chatGPTCount;
+    @track isChatButtonAllowed = true;
+    @track displayLoadingIcon = false;
+    @track chatQueryPerformed = false;
     @track errors;
 
-    @something
-    displayLoadingIcon;
-
-    [[someVariable]] = {};
+    _question;
+    _answer;
+    selectedAnswer = {};
     blueColor = 'rgb(65, 148, 249)';
     whiteColor = 'rgb(255,255,255)';
     orangeColor = 'rgb(255, 165, 0)';
@@ -20,12 +47,15 @@ export default class ShowQuestion extends LightningElement {
 
     chatGPTIcon = CHAT_LOGO;
 
-    someFunction(event) {
-        if (Object.keys([[someVariable]]).length > 0) {
-            this.setDefaultStyle(this.[[someVariable]].element);
+    selectAnswer(event) {
+        if (Object.keys(this.selectedAnswer).length > 0) {
+            this.setDefaultStyle(this.selectedAnswer.element);
         }
-        /** Now select the answer */
-
+        const answerChoice = event.target.dataset.id;
+        this.selectedAnswer.value = answerChoice;
+        this.selectedAnswer.element = this.template.querySelector(`[data-id="${answerChoice}"]`);
+        this.setSelectedStyle(event.target);
+        this.answer = answerChoice;
         /** Navigating to next screen */
         if (this.availableActions.find(action => action === 'Next')) {
             const navigateNextEvent = new FlowNavigationNextEvent();
@@ -71,7 +101,23 @@ export default class ShowQuestion extends LightningElement {
 
     @api
     askChatGPT(event) {
-        /**Ask ChatGPT */
+        if (this.chatQueryPerformed == false) {
+            this.displayLoadingIcon = true;
+           askQuestion({extractCityNameOnly : false,
+                triviaHints : this.question.triviaHints,
+                triviaAnswerChoicesList : this.question.answerChoices})
+               .then(result => {
+                   this.displayLoadingIcon = false;
+                   this.chatGPTAnswer = result;
+                   this.chatQueryPerformed = true;
+                   this.chatGPTCount++;
+               })
+               .catch(error => {
+                   this.error = error;
+                   console.log('Error: ' + error);
+                   this.chatGPTAnswer = error;
+                   this.displayLoadingIcon = false;
+               });
         }
         /**
         if (this._remainingChatGPTCount <= 0) {

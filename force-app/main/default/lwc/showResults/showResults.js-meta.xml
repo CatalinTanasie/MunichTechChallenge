@@ -9,7 +9,8 @@
     </targets>
     <targetConfigs>
         <targetConfig targets="lightning__FlowScreen">
-            <!--some other stuff-->
+            <property name="triviaScore" label="Trivia Score" type="Integer" role="inputOnly" />
+            <property name="triviaFeedback" label="Trivia Feedback" type="String" role="inputOnly"/>
             <property name="isTestRun" label="Is Test Run" type="Boolean" role="inputOnly" />
         </targetConfig>
     </targetConfigs>
